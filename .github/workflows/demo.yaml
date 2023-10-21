@@ -1,0 +1,14 @@
+name: pyinstaller
+on: workflow_dispatch:
+
+jobs:
+  build-on-windows:
+    runner: windows-2022
+    steps:
+       - name: checkout code
+         uses: actions/checkout@v3
+         ### since windows 2022 默认已经安装了好了python和pip，所以在steps这里我们不用再去安装python和pip，直接install pyinstaller
+       - name: install pyinstaller 
+         run: pip insgtall pyinstaller
+       - name: build python scripts to exe
+         run: pyinstaller sha256.py -F
