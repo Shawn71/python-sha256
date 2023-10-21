@@ -4,7 +4,7 @@ on:
 
 jobs:
   build-on-windows:
-    runner: windows-2022
+    runners: windows-2022
     steps:
        - name: checkout code
          uses: actions/checkout@v3
