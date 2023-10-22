@@ -59,4 +59,33 @@ jobs:
             run: |
              ls
              ./sha256.exe sha256.exe
-          
+    test-build-linux:
+        runs-on: ubuntu-latest
+        needs: build-on-linux
+        steps:
+          - name: download linux bin file
+            uses: actions/download-artifact@v3
+            with:
+              name: sha256-linux-bin-file
+          - name: test bin file
+            run: |
+             ls
+             chmod a+x sha256
+             ./sha256 sha256
+    test-build-macos:
+        runs-on: macos-12
+        needs: build-on-macos
+        steps:
+          - name: download macos bin file
+            uses: actions/download-artifact@v3
+            with:
+              name: sha256-macos-bin-file
+          - name: test bin file
+            run: |
+             ls
+             chmod a+x sha256
+             ./sha256 sha256
+
+            
+
+        
