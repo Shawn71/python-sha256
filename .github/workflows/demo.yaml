@@ -79,8 +79,7 @@ jobs:
         - name: download macos bin file
           uses: actions/download-artifact@v3
           with:
-            name: sha256-macos-bin-file
-        - name: test bin file
+            name: sha256-mac-bin-file
           run: |
             ls
             chmod a+x sha256
