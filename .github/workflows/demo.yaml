@@ -80,6 +80,7 @@ jobs:
           uses: actions/download-artifact@v3
           with:
             name: sha256-mac-bin-file
+        - name: test mac os bin file
           run: |
             ls
             chmod a+x sha256
