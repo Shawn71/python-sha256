@@ -15,9 +15,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: sha256-windows-exe
-          path: dist\sha256.exe
+          path: dist/sha256.exe
   build-on-linux:
-    runs-on：ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
        - name: checkout code
          uses: actions/checkout@v4
