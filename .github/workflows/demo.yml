@@ -30,6 +30,4 @@ jobs:
          with:
             name: sha256-linux-bin-file
             path: dist/sha256
-            
-    path: dist/sha256.exe
         
