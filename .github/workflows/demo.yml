@@ -47,7 +47,7 @@ jobs:
   test-build-windows:
     runs-on: windows-2022
     if: ${{ success() }}
-    needs: [build_on_linux]
+    needs: [build-on-windows]
     steps:
       - name: download exe file
         uses: actions/download-artifact@v4
