@@ -16,4 +16,19 @@ jobs:
         with:
           name: sha256-windows-exe
           path: dist\sha256.exe
-        
+  build-on-linux:
+    runs-on： ubuntu-latest
+    steps:
+       - name: checkout code
+         uses: actions/checkout@v4
+       - name: install pyinstaller
+         run: pip install pyinstaller
+       - name: build sha256 biniary file
+         run: pyinstaller sha256.py -F
+       - name: upload biniary file 
+         uses: actions/upload-artifact@v4
+         with:
+            name: sha256-linux-bin-file
+            path: dist/sha256
+            
+    
