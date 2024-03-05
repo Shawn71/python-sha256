@@ -30,4 +30,19 @@ jobs:
          with:
             name: sha256-linux-bin-file
             path: dist/sha256
+  build-on-mac:
+    runs-on: macos-12
+    steps:
+      - name: check out code
+        uses: actions/checkout@v4
+      - name: install pyinstaller
+        run: pip3 install pyinstaller
+      - name: build binary file
+        run: pyinstaller sha256.py -F
+      - name: upload binary file
+        uses: actions/upload-artifact@v4
+        with: 
+          name: sha256-macos
+          path: dist/sha256
+  
         
