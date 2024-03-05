@@ -43,6 +43,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with: 
           name: sha256-macos
+          path: dist/sha256
 
   test-build-windows:
     runs-on: windows-2022
@@ -56,7 +57,5 @@ jobs:
       - name: test exe file
         run: |
           ls
-          ./sha256.exe sha256.exe    
-            path: dist/sha256
-  
+          ./sha256.exe sha256.exe
         
